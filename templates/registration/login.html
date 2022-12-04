@@ -1,0 +1,35 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+    <style>
+        h2{
+            text-align: center;
+            padding-bottom: 3rem;
+        }
+        .form{
+            margin: auto;
+            text-align: center;
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+        <h2>Login page</h2>
+        <div class="form">
+            <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
